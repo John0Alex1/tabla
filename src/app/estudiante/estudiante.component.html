@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Información del Estudiante</h2>
+    <p><strong>Nombre:</strong> {{ estudiante.nombre }}</p>
+    <p><strong>Carrera:</strong> {{ estudiante.carrera }}</p>
+    <p><strong>Materia:</strong> {{ estudiante.materia }}</p>
+
+    <h3>Notas</h3>
+    <ul>
+        <li *ngFor="let nota of estudiante.notas">{{ nota }}</li>
+    </ul>
+
+    <h3>Promedio: {{ promedio }}</h3>
+    <p [ngClass]="estadoMateria === 'Aprobado' ? 'aprobado' : 'perdido'">
+        {{ estudiante.materia }} - {{ estadoMateria }}
+    </p>
+</div>
